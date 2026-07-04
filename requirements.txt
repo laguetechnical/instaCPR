@@ -1,0 +1,11 @@
+requests
+python-dotenv
+beautifulsoup4
+selenium
+webdriver-manager
+pproxy
+python-telegram-bot
+tenacity
+telethon
+rich
+flask
