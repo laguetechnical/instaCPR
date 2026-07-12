@@ -135,30 +135,20 @@ git clone https://github.com/laguetechnical/instaCPR.git
 cd instaCPR
 ```
 
-Create a virtual environment
+### Linux (One-line Automatic Install)
 
 ```bash
-python -m venv .venv
-```
-
-Activate
-
-### Linux
-
-```bash
-source .venv/bin/activate
-```
+git clone https://github.com/laguetechnical/instaCPR.git && cd instaCPR && python3 -m venv venv && source venv/bin/activate && pip install -r requirements.txt && cat > /usr/local/bin/instacpr << 'EOF'
+#!/bin/bash
+export PYTHONPATH="/path/to/instaCPR:$PYTHONPATH"
+exec $(pwd)/venv/bin/python $$   (pwd)/mainTUI.py "   $$@"
+EOF
+sudo chmod +x /usr/local/bin/instacpr && deactivate && echo "✅ InstaCPR installed! Run: instacpr"
 
 ### Windows
 
 ```cmd
 .venv\Scripts\activate
-```
-
-Install dependencies
-
-```bash
-pip install -r requirements.txt
 ```
 
 ---
