@@ -1,0 +1,29 @@
+[project]
+name = "instacpr"
+version = "1.0.0"
+description = "Instagram Copyright Report Tool (InstaCPR)"
+requires-python = ">=3.8"
+dependencies = [
+    "requests",
+    "python-dotenv",
+    "beautifulsoup4",
+    "selenium",
+    "webdriver-manager",
+    "pproxy",
+    "python-telegram-bot",
+    "tenacity",
+    "telethon",
+    "rich",
+    "flask"
+]
+
+[project.scripts]
+instacpr = "mainTUI:main"
+
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["*"]
