@@ -3,7 +3,6 @@ import requests
 import random, os
 BASE_URL = "https://lt-mailgen.onrender.com"
 API_KEY = os.getenv("API_KEY")
-
 HEADERS = {
     "X-API-Key": API_KEY,
     "Content-Type": "application/json",
@@ -74,7 +73,8 @@ def generate_temp_email(full_name, domain="1"):
             "on_taken": "error",
             "max_retry": 0,
         }
-
+        print("full_name =", repr(full_name))
+        print("username  =", repr(username))
         try:
             response = requests.post(
                 f"{BASE_URL}/generate",
@@ -82,7 +82,10 @@ def generate_temp_email(full_name, domain="1"):
                 json=payload,
                 timeout=60,
             )
-
+            print("Payload:", payload)
+            print("Status:", response.status_code)
+            print("Response:", response.text)
+            
             response.raise_for_status()
 
             result = response.json()
@@ -105,7 +108,7 @@ def generate_temp_email(full_name, domain="1"):
 
                 username = (
                     f"{re.sub(r'[^a-zA-Z0-9]', '', full_name).lower()}_"
-                    f"{random.randint(1000,9999)}"
+                    f"{random.randint(100000,999999)}"
                 )
 
                 retries -= 1

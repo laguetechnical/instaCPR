@@ -9,7 +9,7 @@ FACEBOOK_FORM_URL = "https://www.facebook.com/help/contact/copyrightform"
 
 DEFAULT_COUNTRY = "India"
 DEFAULT_COPIED_TYPE = "Video"
-OTP_TIMEOUT = 5  # seconds
+OTP_TIMEOUT = 180  # seconds
 SELENIUM_TIMEOUT = 60
 
 # Paths
