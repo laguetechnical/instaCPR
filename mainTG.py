@@ -4,7 +4,9 @@ from telegram.ext import Application, CommandHandler, ContextTypes
 from core.models import ReportData
 from core.queue import QueueManager
 import os
-
+import sys
+if sys.platform == "win32":
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 queue_manager = QueueManager()
 BOT_LOOP = None
 BOT_TOKEN = os.getenv("BOT_TOKEN")
